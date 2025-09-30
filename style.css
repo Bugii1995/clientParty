@@ -1,0 +1,236 @@
+* {
+	margin:0 ;
+    scrollbar-width: none;
+	padding: 0;
+	box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+#container {
+    scroll-snap-type: y mandatory;
+    overflow: scroll;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#myVideo {
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  min-width: 100%; 
+  min-height: 100%;
+  opacity: 0.9;
+ 
+}
+.logo{
+    width: 100%;
+    color: #0c1019;
+    z-index: 100;
+}
+
+/* content */
+.content{
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+    display: flex;
+    gap:10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    scroll-snap-type: y mandatory;
+    overflow: scroll;
+
+}
+
+.sec2{
+    background-position: center;
+    background-size: cover;
+}
+h1{
+    font-size: 50px;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+.menu{
+    text-align: right;
+    position: fixed;
+    width: 100%;
+    z-index: 200;
+}
+/* I hide the checkbox because I only need the label */
+#check{
+    display: none;
+}
+
+.button{
+    width: 48px;
+    height: 48px;
+    background: #FD5108;
+    padding: 12px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    padding-top: 8px;
+    line-height: 8px;
+    text-align: left;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 201;
+}
+.button:hover{
+    background: #FD5108;
+}
+.button span{
+    height: 3px;
+    width: 100%;
+    background: white;
+    display: inline-block;
+    transition: all 0.5s cubic-bezier(.62,.43,.35,1.47);
+}
+
+
+/* toggle icon animation */
+#check:checked ~ .button span:nth-child(1){
+    width: 100%;
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+#check:checked ~ .button span:nth-child(2){
+    width: 0;
+}
+
+#check:checked ~ .button span:nth-child(3){
+    width: 100%;
+    transform: rotate(-45deg) translateY(-7px) translateX(7px);
+}
+
+
+/* the nav height is set to 0 when the navbar is closed */
+
+nav{
+    text-align: left;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    height: 0;
+}
+nav a{
+    text-decoration: none;
+    color: #0c1019;
+    display: block;
+    font-size: 18px;
+    transition: all 0.4s cubic-bezier(.22,.43,.35,1.5);
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: top;
+    text-align: center;
+    border-bottom: 1px solid #b4ac97;
+}
+
+nav a:hover{
+    background: #FD5108;
+}
+
+/* the nav height will be set to the height in pixels that would have for default, using height:auto won't work but you can put that value in pixels creating the slide*/
+#check:checked ~ nav{
+    height: 344px;
+}
+
+#check:checked ~ nav a{
+    padding: 10px;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* you can edit the direction where the slide starts, changing the height animation to width, but it will take some changes.
+for example:
+
+nav{
+    width: 0%;
+    background: #ffffff;
+    height: auto;
+    max-height 144px;
+    opacity: 0;
+}
+
+#check:checked ~ nav{
+    width: 100%;
+    opacity: 1;
+} 
+
+*/
+
+footer {
+    background-color: #FD5108;
+    width: 80px;
+    height: 50px;
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.home {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 5px rgba(2, 15, 19, 0.153);
+}
+.home a{
+    text-decoration: none;
+    color: white;
+}
+.img {
+    width: 95%;
+    overflow: hidden;
+    scroll-snap-align: start;
+}
+.sec1 {
+    height: 100vh;
+    width: 100%;
+}
+div.sticky {
+  position: sticky;
+  top: 0;
+  background-color: #FD5108;
+  height: 48px;
+  z-index: 100;
+  color: white;
+  font-weight: bold;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.two {
+    left: 100px;
+}
+.three {
+    left: 200px;
+}
+.four {
+    left: 300px;
+}
+.five {
+    left: 400px;
+}
+.six {
+    left: 500px;
+}
